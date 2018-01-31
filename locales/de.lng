@@ -3762,7 +3762,7 @@ loading from local index...==lädt aus lokalem Index...
 e="Search"==e="Suchen"
 #-----------------------------
 
-#File: dagrsolsearch
+#File: yacysearch.html
 #---------------------------
 Search Page==Suchseite
 This search result can also be retrieved as RSS/<a href=\"http://www.opensearch.org\" target=\"_blank\">opensearch</a> output.==Das Suchergebnis kann auch als RSS/<a href="http://www.opensearch.org">opensearch</a> Ausgabe abgerufen werden.

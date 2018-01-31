@@ -61,7 +61,7 @@ public class ConfigPortal {
                 if ("front".equals(popup)) {
                     sb.setConfig(SwitchboardConstants.BROWSER_POP_UP_PAGE, "index.html");
                 } else if ("search".equals(popup)) {
-                    sb.setConfig(SwitchboardConstants.BROWSER_POP_UP_PAGE, "dagrsolsearch");
+                    sb.setConfig(SwitchboardConstants.BROWSER_POP_UP_PAGE, "yacysearch.html");
                 } else if ("interactive".equals(popup)) {
                     sb.setConfig(SwitchboardConstants.BROWSER_POP_UP_PAGE, "yacyinteractive.html");
                 } else {

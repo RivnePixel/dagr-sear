@@ -303,11 +303,11 @@ public class YJsonResponseWriter implements QueryResponseWriter {
   "channels": [{
     "title": "YaCy P2P-Search for uni-mainz",
     "description": "Search for uni-mainz",
-    "link": "http://localhost:8090/dagrsolsearch?query=uni-mainz&amp;resource=local&amp;contentdom=text&amp;verify=-UNRESOLVED_PATTERN-",
+    "link": "http://localhost:8090/yacysearch.html?query=uni-mainz&amp;resource=local&amp;contentdom=text&amp;verify=-UNRESOLVED_PATTERN-",
     "image": {
       "url": "http://localhost:8090/env/grafics/yacy.gif",
       "title": "Search for uni-mainz",
-      "link": "http://localhost:8090/dagrsolsearch?query=uni-mainz&amp;resource=local&amp;contentdom=text&amp;verify=-UNRESOLVED_PATTERN-"
+      "link": "http://localhost:8090/yacysearch.html?query=uni-mainz&amp;resource=local&amp;contentdom=text&amp;verify=-UNRESOLVED_PATTERN-"
     },
     "totalResults": "1986",
     "startIndex": "0",

@@ -69,7 +69,7 @@ public class InfoPage implements Layout {
         @Override
         public void actionPerformed(ActionEvent ev) {
             //int pos = SearchBox.getSelectionEnd();
-            Browser.openBrowser("http://" + host + ":" + port + "/dagrsolsearch?display=0&verify=true&contentdom=text&nav=all&maximumRecords=10&startRecord=0&resource=global&urlmaskfilter=.*&prefermaskfilter=&indexof=off&meanCount=5&query=" + SearchBox.getText().replace(' ', '+'));
+            Browser.openBrowser("http://" + host + ":" + port + "/yacysearch.html?display=0&verify=true&contentdom=text&nav=all&maximumRecords=10&startRecord=0&resource=global&urlmaskfilter=.*&prefermaskfilter=&indexof=off&meanCount=5&query=" + SearchBox.getText().replace(' ', '+'));
             SearchBox.setText("");
             //SearchBox..insert(" ", pos);
             //SearchBox.setCaretPosition(pos + 1);

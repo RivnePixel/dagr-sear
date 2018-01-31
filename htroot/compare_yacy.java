@@ -39,8 +39,8 @@ public class compare_yacy {
     public static final String defaultsearchR = "startpage.com";
     private static final Map<String, String> searchengines = new LinkedHashMap<String, String>();
     static {
-        searchengines.put(defaultsearchL, "dagrsolsearch?display=2&resource=global&query=");
-        searchengines.put("YaCy (local)", "dagrsolsearch?display=2&resource=local&query=");
+        searchengines.put(defaultsearchL, "yacysearch.html?display=2&resource=global&query=");
+        searchengines.put("YaCy (local)", "yacysearch.html?display=2&resource=local&query=");
         //searchengines.put("google.com", "https://www.google.com/#q=");
         searchengines.put("startpage.com", "https://startpage.com/do/search?cat=web&query=");
         searchengines.put("bing.com", "http://www.bing.com/search?q=");
@@ -51,11 +51,11 @@ public class compare_yacy {
         searchengines.put("romso.de", "http://romso.de/?q=");
         searchengines.put("Wikipedia English", "http://en.wikipedia.org/wiki/");
         searchengines.put("Wikipedia Deutsch", "http://de.wikipedia.org/wiki/");
-        searchengines.put("Sciencenet", "http://sciencenet.fzk.de:8080/dagrsolsearch?verify=true&resource=global&nav=all&display=2&meanCount=5&query=");
+        searchengines.put("Sciencenet", "http://sciencenet.fzk.de:8080/yacysearch.html?verify=true&resource=global&nav=all&display=2&meanCount=5&query=");
         searchengines.put("dbpedia", "http://dbpedia.neofonie.de/browse/~:");
         searchengines.put("wolfram alpha", "http://www.wolframalpha.com/input/?i=");
         searchengines.put("OAIster@OCLC", "http://oaister.worldcat.org/search?q=");
-        searchengines.put("oai.yacy.net", "http://oai.yacy.net/dagrsolsearch?verify=true&resource=local&nav=all&display=2&meanCount=5&query=");
+        searchengines.put("oai.yacy.net", "http://oai.yacy.net/yacysearch.html?verify=true&resource=local&nav=all&display=2&meanCount=5&query=");
     }
 
     public static serverObjects respond(final RequestHeader header, final serverObjects post, final serverSwitch env) {

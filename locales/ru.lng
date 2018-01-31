@@ -4094,7 +4094,7 @@ e="Search"==e="Поиск"
 "Search..."=="Поиск..."
 #-----------------------------
 
-#File: dagrsolsearch
+#File: yacysearch.html
 #---------------------------
 Search Page==Страница поиска
 This search result can also be retrieved as RSS/<a href=\"http://www.opensearch.org\" target=\"_blank\">opensearch</a> output.==Результат поиска может быть отправлен в RSS-ленту/<a href="http://www.opensearch.org">OpenSearch</a>.

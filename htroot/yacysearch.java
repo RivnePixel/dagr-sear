@@ -149,7 +149,7 @@ public class yacysearch {
         if ( hostName.indexOf(':', 0) == -1 ) {
             hostName += ":" + env.getConfig("port", "8090");
         }
-        prop.put("searchBaseURL", "http://" + hostName + "/dagrsolsearch");
+        prop.put("searchBaseURL", "http://" + hostName + "/yacysearch.html");
         prop.put("rssYacyImageURL", "http://" + hostName + "/env/grafics/yacy.gif");
         prop.put("thisaddress", hostName);
         final boolean clustersearch = sb.isRobinsonMode() && sb.getConfig(SwitchboardConstants.CLUSTER_MODE, "").equals(SwitchboardConstants.CLUSTER_MODE_PUBLIC_CLUSTER);

@@ -423,7 +423,7 @@ div.searchresults p{
   padding-left: 20px;
 }
 
-form.search.small div.yacylogo { /* The logo in dagrsolsearch */
+form.search.small div.yacylogo { /* The logo in yacysearch.html */
   display:inline;
   padding:0;
   margin: 5px;
@@ -1046,3 +1046,7 @@ div#tagcloud {
   border: 1px dashed black;
   z-index: 100;
  }
+
+ .progress {
+    display: none;
+}

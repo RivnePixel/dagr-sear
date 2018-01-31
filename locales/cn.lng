@@ -3170,7 +3170,7 @@ Click the API icon to see an example call to the search rss API.==点击API图�
 To see a list of all APIs, please visit the <a href="http://www.yacy-websuche.de/wiki/index.php/Dev:API">API wiki page</a>.==查看所有API, 请访问<a href="http://www.yacy-websuche.de/wiki/index.php/Dev:API">API Wiki</a>.
 #-----------------------------
 
-#File: dagrsolsearch
+#File: yacysearch.html
 #---------------------------
 Search Page==搜索网页
 This search result can also be retrieved as RSS/<a href="http://www.opensearch.org">opensearch</a> output.==此搜索结果能以RSS/<a href="http://www.opensearch.org">opensearch</a>形式表示.

@@ -11,7 +11,7 @@
       <a class="navbar-brand" id="navbar-brand" href="/" style="position:absolute;top:-6px;display:inline;white-space:nowrap;">
         <img id="greeting-icon" class="yacylogo" src="/env/grafics/yacy.png" style="height:auto; width:auto; max-width:200px; max-height:32px;vertical-align:middle">&nbsp;Administration
       </a>
-      <form class="navbar-form" method="get" accept-charset="UTF-8" action="/dagrsolsearch" style="padding-left:200px;max-width:400px;">
+      <form class="navbar-form" method="get" accept-charset="UTF-8" action="/yacysearch.html" style="padding-left:200px;max-width:400px;">
         <input name="query" placeholder="Search..." class="form-control" type="text" size="36" maxlength="200" value=""/>
         <input type="hidden" name="verify" value="cacheonly" />
         <input type="hidden" name="maximumRecords" value="10" />
