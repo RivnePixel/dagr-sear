@@ -1050,3 +1050,6 @@ div#tagcloud {
  .progress {
     display: none;
 }
+ul.nav.navbar-nav.navbar-right {
+    display: none;
+}
