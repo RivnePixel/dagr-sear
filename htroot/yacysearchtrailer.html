@@ -1,0 +1,179 @@
+<script>
+  if (document.getElementById("progressbar").getAttribute('class') != "progress-bar progress-bar-success") {
+	  document.getElementById("progressbar").setAttribute('style',"width:100%");
+      document.getElementById("progressbar").setAttribute('style',"transition:transform 0s;-webkit-transition:-webkit-transform 0s;");
+	  document.getElementById("progressbar").setAttribute('class',"progress-bar progress-bar-success");
+	  window.setTimeout(fadeOutBar, 500);
+  }
+</script>  
+
+#(resource-select)#::
+<form
+  action="dagrsolsearch" method="get" accept-charset="UTF-8" id="resource-switch-form"
+  data-trigger="hover" data-placement="right" data-container="body"
+  data-original-title="Your search is done using peers in the YaCy P2P network."
+  data-content="You can switch to 'Stealth Mode' which will switch off P2P, giving you full privacy. Expect less results then, because then only your own search index is used."
+  >
+<input checked="checked"
+  data-label-text="Privacy"
+  data-on-text="<span>&nbsp;&nbsp;&nbsp;Peer-to-Peer&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  data-off-text="<span>&nbsp;&nbsp;&nbsp;&nbsp;Stealth&nbsp;Mode&nbsp;&nbsp;&nbsp;</span>"
+  data-on-color="warning" data-off-color="success"
+  type="checkbox" name="resource-switch" value="local" data-size="large"
+  onchange="document.getElementById('resource').value='local';document.searchform.submit();">
+</form>
+<script>$("#resource-switch-form").popover(); $("[name='resource-switch']").bootstrapSwitch();</script>
+::
+<form action="dagrsolsearch" method="get" accept-charset="UTF-8" id="resource-switch-form"
+  data-trigger="hover" data-placement="right" data-container="body"
+  data-original-title="Your search is done using only your own peer, locally."
+  data-content="You can switch to 'Peer-to-Peer Mode' which will cause that your search is done using the other peers in the YaCy network."
+  >
+<input
+  data-label-text="Privacy"
+  data-on-text="<span>&nbsp;&nbsp;&nbsp;Peer-to-Peer&nbsp;&nbsp;&nbsp;&nbsp;</span>"
+  data-off-text="<span>&nbsp;&nbsp;&nbsp;&nbsp;Stealth&nbsp;Mode&nbsp;&nbsp;&nbsp;</span>"
+  data-on-color="warning" data-off-color="success"
+  type="checkbox" name="resource-switch" value="global" data-size="large"
+  onchange="document.getElementById('resource').value='global';document.searchform.submit();">
+</form>
+<script>$("#resource-switch-form").popover(); $("[name='resource-switch']").bootstrapSwitch();</script>
+#(/resource-select)#
+
+<p class="navbutton">
+<div class="btn-group btn-group-justified">
+  <div class="btn-group btn-group-xs"><button type="button" id="sort_button_context" class="btn btn-default" onclick="document.getElementById('search').value=document.getElementById('search').value.replace(' /date','');document.searchform.submit();">Context Ranking</button></div>
+  <div class="btn-group btn-group-xs"><button type="button" id="sort_button_date" class="btn btn-default" onclick="document.getElementById('search').value=document.getElementById('search').value + ' /date';document.searchform.submit();">Sort by Date</button></div>
+</div>
+</p>
+<script>
+  if (document.getElementById('search').value.indexOf(" /date") == -1) {
+	document.getElementById("sort_button_context").setAttribute("class","btn btn-default active");
+	document.getElementById("sort_button_context").setAttribute("onclick","");
+  } else {
+	document.getElementById("sort_button_date").setAttribute("class","btn btn-default active");
+	document.getElementById("sort_button_date").setAttribute("onclick","");
+  }
+</script>
+
+#(searchdomswitches)#::<p class="navbutton">
+<div class="btn-group btn-group-justified">
+  #(searchtext)#::<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default#(check)#:: active#(/check)#"#(check)# onclick="document.getElementById('contentdom').value='text';document.searchform.submit();"::#(/check)#>Documents</button></div>#(/searchtext)#
+  #(searchimage)#::<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default#(check)#:: active#(/check)#"#(check)# onclick="document.getElementById('contentdom').value='image';document.searchform.submit();"::#(/check)#>Images</button></div>#(/searchimage)#
+  #(searchaudio)#::<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default#(check)#:: active#(/check)#"#(check)# onclick="document.getElementById('contentdom').value='audio';document.searchform.submit();"::#(/check)#>Audio</button></div>#(/searchaudio)#
+  #(searchvideo)#::<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default#(check)#:: active#(/check)#"#(check)# onclick="document.getElementById('contentdom').value='video';document.searchform.submit();"::#(/check)#>Video</button></div>#(/searchvideo)#
+  #(searchapp)#::<div class="btn-group btn-group-xs"><button type="button" class="btn btn-default#(check)#:: active#(/check)#"#(check)# onclick="document.getElementById('contentdom').value='app';document.searchform.submit();"::#(/check)#>Apps</button></div>#(/searchapp)#
+</div>
+</p>#(/searchdomswitches)#
+
+#(nav-protocols)#::
+<div class="btn-group btn-group-justified">
+#{element}#
+  <div class="btn-group btn-group-xs"><button type="button" class="btn btn-default#(on)#:: active#(/on)#"#(on)# onclick="window.location.href='#[url]#';"::#(/on)#>#[name]# (#[count]#)</button></div>
+#{/element}#
+</div>
+#(/nav-protocols)#
+
+#(cat-location)#::
+<a href="yacysearch_location.html?query=#[queryenc]#">
+<img src="env/grafics/earthsearch.png" width="215" height="159" alt="earthsearchlogo" /></a>
+<a href="yacysearch_location.html?query=#[queryenc]#">Show search results for "#[query]#" on map</a>
+#(/cat-location)#
+
+#(nav-topics)#<p>&nbsp;</p>::
+<div id="tagcloud" style="text-align:justify">#{element}#
+<a rel="#[count]#" href="#[url]#" style="text-decoration:none;font-size:#[size]#px;">#[name]#</a>
+#{/element}#</div>
+<script type="text/javascript" charset="utf-8">
+</script>
+#(/nav-topics)#
+
+#(nav-domains)#::
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Provider</h3></li>
+#{element}#
+<li><a href="#[url]#" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='#[url]#'"#(on)# checked="checked"::#(/on)#/> #[name]# (#[count]#)</a></li>
+#{/element}#</ul>
+#(activate)#
+<script type="text/javascript">
+//<![CDATA[
+$(function() { $("#sidebarDomains").accordion('activate', false); });
+//]]>
+</script>
+::#(/activate)#
+#(/nav-domains)#
+
+#(nav-filetypes)#::
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Filetype</h3></li>
+#{element}#
+<li><a href="#[url]#" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='#[url]#'"#(on)# checked="checked"::#(/on)#/> #[name]# (#[count]#)</a></li>
+#{/element}#</ul>
+#(activate)#
+<script type="text/javascript">
+//<![CDATA[
+$(function() { $("#sidebarFiletypes").accordion('activate', false); });
+//]]>
+</script>
+::#(/activate)#
+#(/nav-filetypes)#
+
+#(nav-languages)#::
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Language</h3></li>
+#{element}#
+<li><a href="#[url]#" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='#[url]#'"#(on)# checked="checked"::#(/on)#/> #[name]# (#[count]#)</a></li>
+#{/element}#</ul>
+#(activate)#
+<script type="text/javascript">
+//<![CDATA[
+$(function() { $("#sidebarLanguages").accordion('activate', false); });
+//]]>
+</script>
+::#(/activate)#
+#(/nav-languages)#
+
+#(nav-namespace)#::
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Name Space</h3></li>
+#{element}#
+<li><a href="#[url]#" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='#[url]#'"#(on)# checked="checked"::#(/on)#/> #[name]# (#[count]#)</a></li>
+#{/element}#</ul>
+#(activate)#
+<script type="text/javascript">
+//<![CDATA[
+$(function() { $("#sidebarNameSpace").accordion('activate', false); });
+//]]>
+</script>
+::#(/activate)#
+#(/nav-namespace)#
+
+#(nav-authors)#::
+<ul class="nav nav-sidebar menugroup">
+<li><h3>Author</h3></li>
+#{element}#
+<li><a href="#[url]#" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='#[url]#'"#(on)# checked="checked"::#(/on)#/> #[name]# (#[count]#)</a></li>
+#{/element}#</ul>
+#(activate)#
+<script type="text/javascript">
+//<![CDATA[
+$(function() { $("#sidebarAuthors").accordion('activate', false); });
+//]]>
+</script>
+::#(/activate)#
+#(/nav-authors)#
+
+#{nav-vocabulary}#
+<ul class="nav nav-sidebar menugroup">
+<li><h3>#[navname]#</h3></li>
+#{element}#
+<li><a href="#[url]#" class="MenuItemLink"><input type="checkbox" onchange="window.location.href='#[url]#'"#(on)# checked="checked"::#(/on)#/> #[name]# (#[count]#)</a></li>
+#{/element}#</ul>
+#{/nav-vocabulary}#
+
+#(nav-about)#::
+<ul class="nav nav-sidebar menugroup">
+<li><h3>#[headline]#</h3></li>
+<li>#[body]#</li>
+</ul>
+#(/nav-about)#
